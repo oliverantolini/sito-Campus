@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Details | Campus Rimini House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #3b82f6; --dark-bg: #0f172a; --card-bg: #1e293b; }
+        body { font-family: 'Poppins', sans-serif; background: var(--dark-bg); color: white; margin: 0; }
+        header { padding: 20px 8%; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; }
+        .container { padding: 40px 8%; max-width: 1000px; margin: auto; }
+        .back-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+        .lang-switch { border: 1px solid var(--primary); color: var(--primary); padding: 4px 10px; border-radius: 6px; text-decoration: none; font-weight: 800; }
+        .photo-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 15px; margin-top: 30px; }
+        .main-photo { width: 100%; height: 400px; background: #334155; border-radius: 15px; object-fit: cover; }
+        .side-photos { display: grid; grid-template-rows: 1fr 1fr; gap: 15px; }
+        .side-photo { width: 100%; height: 192px; background: #334155; border-radius: 15px; object-fit: cover; }
+        .description { background: var(--card-bg); padding: 30px; border-radius: 20px; margin-top: 30px; border: 1px solid #334155; }
+    </style>
+</head>
+<body>
+<header>
+    <div style="font-weight: 800; color: #3b82f6;">CAMPUS RIMINI</div>
+    <div style="display: flex; gap: 20px; align-items: center;">
+        <a href="index-en.html" class="back-link">← Home</a>
+        <a id="it-link" href="dettaglio-stanza.html" class="lang-switch">IT</a>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Gallery & Accommodation Details</h1>
+    
+    <div class="photo-gallery">
+        <img id="img-main" src="" class="main-photo" alt="Main Photo">
+        <div class="side-photos">
+            <img id="img-side-1" src="" class="side-photo" alt="Detail 1">
+            <img id="img-side-2" src="" class="side-photo" alt="Detail 2">
+        </div>
+    </div>
+
+    <div class="description">
+        <h2 id="room-title">Room Features</h2>
+        <ul id="features-list">
+            </ul>
+    </div>
+</div>
+
+<script>
+    // 1. Data configuration for each room type (English version)
+    const data = {
+        'singola': {
+            title: "Single Room Features",
+            photos: [
+                "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=400&q=80",
+                "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80"
+            ],
+            features: ["Single Bed (90x200)", "Large Wardrobe", "160cm Desk", "High-speed Wi-Fi", "Air Conditioning"]
+        },
+        'doppia': {
+            title: "Double Room Features",
+            photos: [
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=400&q=80",
+                "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=400&q=80"
+            ],
+            features: ["Two Single Beds", "Double Wardrobe", "Two Desks", "High-speed Wi-Fi", "Private Balcony"]
+        }
+    };
+
+    // 2. Identify the room type from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get('type') || 'singola';
+    const room = data[type];
+
+    // 3. Update the page content
+    if (room) {
+        document.getElementById('room-title').innerText = room.title;
+        
+        document.getElementById('img-main').src = room.photos[0];
+        document.getElementById('img-side-1').src = room.photos[1];
+        document.getElementById('img-side-2').src = room.photos[2];
+
+        const list = document.getElementById('features-list');
+        room.features.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = item;
+            list.appendChild(li);
+        });
+
+        // Maintain the room type when switching back to Italian
+        document.getElementById('it-link').href = "dettaglio-stanza.html?type=" + type;
+    }
+</script>
+</body>
+</html>

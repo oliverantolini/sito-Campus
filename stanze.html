@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Stanze | Campus Rimini House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Identico alla home per coerenza */
+        :root { --primary: #3b82f6; --accent: #f59e0b; --dark-bg: #0f172a; --card-bg: #1e293b; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--dark-bg); color: white; }
+        header { background: #0f172a; padding: 20px 8%; display: flex; justify-content: space-between; border-bottom: 1px solid #334155; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { color: white; text-decoration: none; }
+        .container { padding: 40px 8%; }
+        .room-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; margin-bottom: 30px; border: 1px solid #334155; display: flex; }
+        .room-img { width: 300px; height: 200px; background: #334155; }
+        .room-info { padding: 20px; }
+        .price { color: var(--primary); font-size: 1.5rem; font-weight: 800; }
+        .btn { background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+<header>
+    <div style="font-weight: 800; color: #3b82f6;">CAMPUS RIMINI</div>
+    <nav><ul><li><a href="index.html">Home</a></li><li><a href="stanze.html">Stanze</a></li><li><a href="libri.html">Libri</a></li><li><a href="movida.html">Movida</a></li></ul></nav>
+</header>
+<div class="container">
+    <h2>Le Nostre Stanze</h2>
+    <div class="room-card">
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=300&q=80'); background-size: cover;"></div>
+        <div class="room-info">
+            <h3>Stanza Singola Premium</h3>
+            <p>Centro storico, Wi-Fi e bollette incluse.</p>
+            <div class="price">€490/mese</div>
+            <a href="mailto:campus.rimini.house@gmail.com" class="btn">Contatta Ora</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

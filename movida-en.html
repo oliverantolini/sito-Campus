@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nightlife | Campus Rimini</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon: #ff007a; --dark-bg: #0f172a; --primary: #3b82f6; }
+        body { font-family: 'Poppins', sans-serif; background: var(--dark-bg); color: white; margin: 0; }
+        
+        header { 
+            padding: 20px 8%; 
+            border-bottom: 1px solid #334155; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .container { padding: 40px 8%; text-align: center; }
+        
+        .event-card { 
+            border: 2px solid var(--neon); 
+            padding: 30px; 
+            border-radius: 20px; 
+            display: inline-block; 
+            box-shadow: 0 0 15px var(--neon);
+            background: #1e293b;
+            max-width: 500px;
+        }
+
+        .lang-switch {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 40px 5%; }
+            .event-card { width: 90%; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="font-weight: 800; color: var(--primary); text-transform: uppercase;">Campus <span>Rimini</span></div>
+    <nav style="display: flex; align-items: center; gap: 20px;">
+        <a href="index-en.html" style="color:white; text-decoration:none; font-weight: 600;">← Back to Home</a>
+        <a href="movida.html" class="lang-switch">IT</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1 style="color: var(--neon); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 30px;">RIMINI UNIVERSITY NIGHT</h1>
+    
+    <div class="event-card">
+        <h2 style="margin-top: 0;">University Wednesday</h2>
+        <p style="font-size: 1.1rem;">Discounts with UniBo Badge in all city center venues!</p>
+        <hr style="border: 0; border-top: 1px solid rgba(255,0,122,0.3); margin: 20px 0;">
+        <p><strong>Every Wednesday from 10:00 PM</strong></p>
+        <p style="opacity: 0.8;">The heart of student nightlife in Rimini. Don't miss the themed parties and exclusive promotions for students.</p>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <p style="color: #94a3b8;">More events coming soon...</p>
+    </div>
+</div>
+
+</body>
+</html>
